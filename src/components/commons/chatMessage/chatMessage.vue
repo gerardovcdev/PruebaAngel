@@ -81,7 +81,7 @@
 
 .chat-scroll
   @apply overflow-y-auto px-8
-  max-height: 80vh
+  height: 80vh
 
 .chat-message-grid
   @apply grid gap-3 mb-3 py-4
