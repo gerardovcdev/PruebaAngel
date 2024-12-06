@@ -34,7 +34,7 @@ const generateAIResponse = async (prompt: string) => {
     const aiMessage: Message = {
       user: defaultUser.value,
       content: response.data.choices[0].message.content.trim(),
-      date: new Date().toISOString(),
+      date: new Date(),
     };
 
     messages.value.push(aiMessage);
@@ -48,7 +48,7 @@ const createMessage = async (content: string) => {
   const userMessage: Message = {
     user: gerardoUser,
     content,
-    date: new Date().toISOString(),
+    date: new Date(),
   };
 
   messages.value.push(userMessage);

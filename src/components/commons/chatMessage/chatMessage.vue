@@ -3,7 +3,7 @@
       <div ref="chatScroll" class="chat-scroll">
         <div class="chat-message-grid" 
              v-for="message in messages" 
-             :key="message.date" 
+             :key="message.date.toString()" 
              :class="{'my-message': message.user.fullName === gerardoUser.fullName, 'default-message': message.user.fullName !== gerardoUser.fullName}">
           <div class="chat-message--user">
             <img :src="message.user.image" alt="avatar" class="chat-message--avatar">
@@ -58,10 +58,9 @@
         }
       };
   
-      const formatDate = (dateString: string) => {
-        const date = new Date(dateString);
-        return date.toLocaleString();
-      };
+      const formatDate = (date: Date) => {
+      return date.toLocaleString();
+    };
   
       return {
         messages,
